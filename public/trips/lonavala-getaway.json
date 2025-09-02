@@ -1,0 +1,30 @@
+{
+  "id": "lonavala-getaway",
+  "title": "Lonavala Getaway",
+  "price": 5000,
+  "image": {
+    "src": "https://placehold.co/1920x600/34d399/ffffff?text=Lonavala+Getaway",
+    "alt": "Lonavala Getaway"
+  },
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Arrival and Relaxation",
+      "description": "Arrive in Lonavala, check into your resort, and enjoy the serene surroundings."
+    },
+    {
+      "day": 2,
+      "title": "Sightseeing and Departure",
+      "description": "Visit popular spots like Bushi Dam and Tiger Point before departing."
+    }
+  ],
+  "inclusions": [
+    "Accommodation in a premium resort",
+    "Breakfast and Dinner",
+    "Sightseeing tour"
+  ],
+  "exclusions": [
+    "Transportation to Lonavala",
+    "Personal expenses"
+  ]
+}

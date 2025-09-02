@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Travel Adventures - Your Gateway to the World</title>
+  <meta name="description" content="Explore breathtaking destinations and book your next adventure with us.">
+  
+  <link rel="stylesheet" href="/src/main.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="flex h-full flex-col bg-white antialiased">
+  
+    <header class="py-6">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="relative z-50 flex justify-between" x-data="{ mobileMenuOpen: false }">
+        <div class="flex items-center md:gap-x-12">
+          <a href="#" aria-label="Home" class="flex items-center">
+            <img src="https://placehold.co/40x40/3b82f6/ffffff?text=M" alt="mountains are calling logo" class="h-10 w-10 rounded-full">
+            <span class="text-2xl font-bold text-slate-900 ml-3">mountains are calling</span>
+          </a>
+        </div>
+        <div class="hidden md:flex md:gap-x-6 items-center">
+          <div x-data="{ open: false }" class="relative">
+            <button @click="open = !open" class="inline-flex items-center rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+              <span>All Trips</span>
+              <svg class="h-4 w-4 text-slate-600 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div x-show="open" @click.away="open = false" class="absolute mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 py-1">
+              <a href="all-destinations.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">All Destinations</a>
+              <a href="weekend-trips.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">Weekend Trips</a>
+              <a href="weekend-treks.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">Weekend Treks</a>
+              <a href="sunrise-treks.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">Sunrise Treks</a>
+              <a href="north-india-trips.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">North India Trips</a>
+              <a href="international-trips.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">International Trips</a>
+            </div>
+          </div>
+          <a href="#gallery" class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">Gallery</a>
+          <a href="#blog" class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">Blog</a>
+          <a href="#about" class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">About</a>
+          <a href="#contact" class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">Contact</a>
+        </div>
+        <div class="flex items-center gap-x-5 md:gap-x-8">
+          <a href="#contact" class="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700">
+            Book Your Adventure
+          </a>
+          <!-- Mobile menu button -->
+          <div class="-mr-1 md:hidden">
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="relative z-10 flex h-8 w-8 items-center justify-center">
+              <svg class="h-3.5 w-3.5 overflow-visible stroke-slate-700" fill="none" stroke-width="2" stroke-linecap="round">
+                <path d="M0 1H14M0 7H14M0 13H14" :class="mobileMenuOpen && 'scale-90 opacity-0'" class="origin-center transition"></path>
+                <path d="M2 2L12 12M12 2L2 12" :class="!mobileMenuOpen && 'scale-90 opacity-0'" class="origin-center transition"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <div x-show="mobileMenuOpen" 
+             x-transition:enter="transition ease-out duration-150"
+             x-transition:enter-start="opacity-0 scale-95"
+             x-transition:enter-end="opacity-100 scale-100"
+             x-transition:leave="transition ease-in duration-100"
+             x-transition:leave-start="opacity-100 scale-100"
+             x-transition:leave-end="opacity-0 scale-95"
+             @click.away="mobileMenuOpen = false"
+             class="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 md:hidden">
+          <div x-data="{ open: false }" class="relative">
+            <button @click="open = !open" class="block w-full p-2 text-left flex justify-between items-center">
+              <span>All Trips</span>
+              <svg class="h-4 w-4 text-slate-600" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div x-show="open" @click.away="open = false" class="pl-4">
+              <a href="all-destinations.html" @click="mobileMenuOpen = false" class="block w-full p-2">All Destinations</a>
+              <a href="weekend-trips.html" @click="mobileMenuOpen = false" class="block w-full p-2">Weekend Trips</a>
+              <a href="weekend-treks.html" @click="mobileMenuOpen = false" class="block w-full p-2">Weekend Treks</a>
+              <a href="sunrise-treks.html" @click="mobileMenuOpen = false" class="block w-full p-2">Sunrise Treks</a>
+              <a href="north-india-trips.html" @click="mobileMenuOpen = false" class="block w-full p-2">North India Trips</a>
+              <a href="international-trips.html" @click="mobileMenuOpen = false" class="block w-full p-2">International Trips</a>
+            </div>
+          </div>
+          <a href="#gallery" @click="mobileMenuOpen = false" class="block w-full p-2">Gallery</a>
+          <a href="#blog" @click="mobileMenuOpen = false" class="block w-full p-2">Blog</a>
+          <a href="#about" @click="mobileMenuOpen = false" class="block w-full p-2">About</a>
+          <a href="#contact" @click="mobileMenuOpen = false" class="block w-full p-2">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="flex-auto">
+    
+    <section class="relative overflow-hidden py-16 sm:py-24">
+      <div class="absolute inset-0">
+        <img src="/images/manali.jpg" alt="Breathtaking mountain landscape" class="h-full w-full object-cover">
+        <div class="absolute inset-0 bg-slate-900/25"></div>
+      </div>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-2xl mx-auto text-center">
+          <h1 class="font-display text-4xl tracking-tight text-white sm:text-6xl animate-fade-in-down">
+            Find Your Next Adventure
+          </h1>
+          <p class="mt-6 text-lg tracking-tight text-white animate-fade-in-up">
+            We offer curated trips to the most amazing destinations. Your dream vacation is just a click away.
+          </p>
+          <div class="mt-10 flex justify-center">
+            <a href="#destinations" class="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700">
+              Explore Trips
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Filter Section -->
+    <section class="bg-white py-12">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg -mt-24 relative z-10">
+          <form class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <!-- Destination Input -->
+            <div>
+              <label for="destination" class="block text-sm font-medium text-slate-700">Destination</label>
+              <input type="text" name="destination" id="destination" placeholder="e.g., Manali, Thailand" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+            </div>
+            <!-- Trip Type Select -->
+            <div>
+              <label for="trip-type" class="block text-sm font-medium text-slate-700">Trip Type</label>
+              <select id="trip-type" name="trip-type" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                <option>All Types</option>
+                <option>Weekend Trip</option>
+                <option>Weekend Trek</option>
+                <option>Sunrise Trek</option>
+                <option>North India</option>
+                <option>International</option>
+              </select>
+            </div>
+            <!-- Date Input -->
+            <div>
+              <label for="date" class="block text-sm font-medium text-slate-700">Date</label>
+              <input type="date" name="date" id="date" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+            </div>
+            <!-- Search Button -->
+            <div class="flex items-end">
+              <button type="submit" class="w-full rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700">
+                Search Trips
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <section id="destinations" class="py-12 sm:py-16 bg-slate-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl animate-fade-in-down">Top Destinations</h2>
+          <p class="mt-4 text-lg tracking-tight text-slate-700 animate-fade-in-up">Explore our hand-picked selection of unforgettable travel experiences.</p>
+        </div>
+        
+        <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Weekend Trips -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/800x600/34d399/ffffff?text=Weekend+Getaway" alt="A cozy cabin in the woods" class="h-56 w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Weekend Trips</h3>
+              <p class="mt-2 text-slate-600">Short and refreshing trips to escape the city hustle.</p>
+              <a href="weekend-trips.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">View More</a>
+            </div>
+          </div>
+
+          <!-- Weekend Treks -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/800x600/60a5fa/ffffff?text=Weekend+Trek" alt="A group of friends trekking on a hill" class="h-56 w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Weekend Treks</h3>
+              <p class="mt-2 text-slate-600">Challenging treks to conquer over a weekend.</p>
+              <a href="weekend-treks.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">View More</a>
+            </div>
+          </div>
+
+          <!-- Sunrise Treks -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/800x600/facc15/ffffff?text=Sunrise+Trek" alt="A beautiful sunrise from a mountain top" class="h-56 w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Sunrise Treks</h3>
+              <p class="mt-2 text-slate-600">Witness breathtaking sunrises from stunning viewpoints.</p>
+              <a href="sunrise-treks.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">View More</a>
+            </div>
+          </div>
+
+          <!-- North India Trips -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/800x600/fb923c/ffffff?text=North+India" alt="A serene view of the Himalayas" class="h-56 w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-slate-900">North India Trips</h3>
+              <p class="mt-2 text-slate-600">Explore the majestic mountains and rich culture of North India.</p>
+              <a href="north-india-trips.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">View More</a>
+            </div>
+          </div>
+
+          <!-- International Trips -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/800x600/f87171/ffffff?text=International+Destination" alt="A famous international landmark" class="h-56 w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-slate-900">International Trips</h3>
+              <p class="mt-2 text-slate-600">Discover the world with our curated international packages.</p>
+              <a href="international-trips.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured-trips" class="py-12 sm:py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl animate-fade-in-down">Featured Trips</h2>
+          <p class="mt-4 text-lg tracking-tight text-slate-700 animate-fade-in-up">Explore our most popular and highly-rated trips.</p>
+        </div>
+        
+        <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Featured Trip Card -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <div class="relative">
+              <img src="https://placehold.co/800x600/fb923c/ffffff?text=Manali+Leh+Trip" alt="Manali" class="h-56 w-full object-cover">
+              <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                <span>4.5</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-lg font-semibold text-slate-900">Manali Leh Trip</h4>
+              <p class="mt-2 text-slate-600">A road trip through the stunning landscapes of the Himalayas.</p>
+              <p class="mt-4 font-semibold text-slate-900">₹25,000 per person</p>
+              <a href="trip-details.html?trip=manali-leh-trip" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+            </div>
+          </div>
+          <!-- Featured Trip Card -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <div class="relative">
+              <img src="https://placehold.co/800x600/f87171/ffffff?text=Thailand+Tour" alt="Thailand" class="h-56 w-full object-cover">
+              <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                <span>4.8</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-lg font-semibold text-slate-900">Thailand Tour</h4>
+              <p class="mt-2 text-slate-600">Explore the vibrant culture and beautiful beaches of Thailand.</p>
+              <p class="mt-4 font-semibold text-slate-900">₹80,000 per person</p>
+              <a href="trip-details.html?trip=thailand-tour" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+            </div>
+          </div>
+          <!-- Featured Trip Card -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <div class="relative">
+              <img src="https://placehold.co/800x600/60a5fa/ffffff?text=Kalsubai+Trek" alt="Kalsubai" class="h-56 w-full object-cover">
+              <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                <span>4.9</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-lg font-semibold text-slate-900">Kalsubai Trek</h4>
+              <p class="mt-2 text-slate-600">Conquer the highest peak in Maharashtra.</p>
+              <p class="mt-4 font-semibold text-slate-900">₹8,000 per person</p>
+              <a href="trip-details.html?trip=kalsubai-trek" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+            </div>
+          </div>
+          <!-- Featured Trip Card -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <div class="relative">
+              <img src="https://placehold.co/800x600/34d399/ffffff?text=Lonavala+Getaway" alt="Lonavala" class="h-56 w-full object-cover">
+              <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                <span>4.7</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-lg font-semibold text-slate-900">Lonavala Getaway</h4>
+              <p class="mt-2 text-slate-600">A perfect escape to the hills of Lonavala.</p>
+              <p class="mt-4 font-semibold text-slate-900">₹5,000 per person</p>
+              <a href="trip-details.html?trip=lonavala-getaway" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+            </div>
+          </div>
+          <!-- Featured Trip Card -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <div class="relative">
+              <img src="https://placehold.co/800x600/facc15/ffffff?text=Tikona+Fort+Trek" alt="Tikona" class="h-56 w-full object-cover">
+              <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                <span>4.6</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-lg font-semibold text-slate-900">Tikona Fort Trek</h4>
+              <p class="mt-2 text-slate-600">Witness a glorious sunrise from the top of Tikona Fort.</p>
+              <p class="mt-4 font-semibold text-slate-900">₹4,000 per person</p>
+              <a href="trip-details.html?trip=tikona-fort-trek" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+            </div>
+          </div>
+          <!-- Featured Trip Card -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <div class="relative">
+              <img src="https://placehold.co/800x600/f87171/ffffff?text=Dubai+Vacation" alt="Dubai" class="h-56 w-full object-cover">
+              <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                <span>4.9</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-lg font-semibold text-slate-900">Dubai Vacation</h4>
+              <p class="mt-2 text-slate-600">Experience the luxury and glamour of Dubai.</p>
+              <p class="mt-4 font-semibold text-slate-900">₹1,20,000 per person</p>
+              <a href="trip-details.html?trip=dubai-vacation" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-12 sm:py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+            From Our Adventures
+          </h2>
+          <p class="mt-4 text-lg tracking-tight text-slate-700">
+            A glimpse into the unforgettable moments from our trips.
+          </p>
+        </div>
+
+        <div class="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+          <div class="aspect-w-1 aspect-h-1 transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/600x600/60a5fa/ffffff?text=Gallery+1" alt="Gallery image 1" class="w-full h-full object-cover rounded-lg shadow-lg">
+          </div>
+          <div class="aspect-w-1 aspect-h-1 transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/600x600/34d399/ffffff?text=Gallery+2" alt="Gallery image 2" class="w-full h-full object-cover rounded-lg shadow-lg">
+          </div>
+          <div class="aspect-w-1 aspect-h-1 transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/600x600/facc15/ffffff?text=Gallery+3" alt="Gallery image 3" class="w-full h-full object-cover rounded-lg shadow-lg">
+          </div>
+          <div class="aspect-w-1 aspect-h-1 transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/600x600/fb923c/ffffff?text=Gallery+4" alt="Gallery image 4" class="w-full h-full object-cover rounded-lg shadow-lg">
+          </div>
+          <div class="aspect-w-1 aspect-h-1 transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/600x600/f87171/ffffff?text=Gallery+5" alt="Gallery image 5" class="w-full h-full object-cover rounded-lg shadow-lg">
+          </div>
+          <div class="aspect-w-1 aspect-h-1 transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/600x600/ca8a04/ffffff?text=Gallery+6" alt="Gallery image 6" class="w-full h-full object-cover rounded-lg shadow-lg">
+          </div>
+          <div class="aspect-w-1 aspect-h-1 transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/600x600/a16207/ffffff?text=Gallery+7" alt="Gallery image 7" class="w-full h-full object-cover rounded-lg shadow-lg">
+          </div>
+          <div class="aspect-w-1 aspect-h-1 transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/600x600/16a34a/ffffff?text=Gallery+8" alt="Gallery image 8" class="w-full h-full object-cover rounded-lg shadow-lg">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="py-12 sm:py-16 bg-slate-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+            From Our Blog
+          </h2>
+          <p class="mt-4 text-lg tracking-tight text-slate-700">
+            Travel tips, stories, and inspiration from our team of experts.
+          </p>
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/800x600/a78bfa/ffffff?text=Blog+Post+1" alt="Blog post 1" class="h-56 w-full object-cover">
+            <div class="p-6">
+              <p class="text-sm text-slate-500">August 30, 2025</p>
+              <h3 class="mt-2 text-lg font-semibold text-slate-900">10 Tips for Your First Solo Trip</h3>
+              <p class="mt-2 text-slate-600">Embarking on a solo adventure? Here are our top tips to make it a memorable one.</p>
+              <a href="#" class="mt-4 inline-block text-blue-600 font-semibold hover:text-blue-700">Read More</a>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/800x600/f472b6/ffffff?text=Blog+Post+2" alt="Blog post 2" class="h-56 w-full object-cover">
+            <div class="p-6">
+              <p class="text-sm text-slate-500">August 28, 2025</p>
+              <h3 class="mt-2 text-lg font-semibold text-slate-900">The Best Street Food to Try in Bangkok</h3>
+              <p class="mt-2 text-slate-600">A culinary journey through the vibrant street food scene of Bangkok.</p>
+              <a href="#" class="mt-4 inline-block text-blue-600 font-semibold hover:text-blue-700">Read More</a>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+            <img src="https://placehold.co/800x600/4ade80/ffffff?text=Blog+Post+3" alt="Blog post 3" class="h-56 w-full object-cover">
+            <div class="p-6">
+              <p class="text-sm text-slate-500">August 25, 2025</p>
+              <h3 class="mt-2 text-lg font-semibold text-slate-900">Packing Essentials for a Mountain Trek</h3>
+              <p class="mt-2 text-slate-600">Don't leave home without these essentials for your next mountain adventure.</p>
+              <a href="#" class="mt-4 inline-block text-blue-600 font-semibold hover:text-blue-700">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-12 sm:py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+            About Travel Adventures
+          </h2>
+          <p class="mt-4 text-lg tracking-tight text-slate-700">
+            We are a passionate team of travel enthusiasts dedicated to creating unforgettable experiences for our clients. Our mission is to make travel accessible, enjoyable, and enriching for everyone.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-slate-50 py-12 sm:py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Mountains Are Calling in Numbers</h2>
+          <p class="mt-4 text-lg tracking-tight text-slate-700">We've been busy creating unforgettable adventures.</p>
+        </div>
+        <div class="mt-16 grid grid-cols-1 gap-8 text-center sm:grid-cols-2 lg:grid-cols-4">
+          <div class="flex flex-col">
+            <span class="text-5xl font-bold text-blue-600">10,000+</span>
+            <span class="mt-2 text-lg text-slate-600">Happy Travelers</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-5xl font-bold text-blue-600">500+</span>
+            <span class="mt-2 text-lg text-slate-600">Trips Organized</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-5xl font-bold text-blue-600">150+</span>
+            <span class="mt-2 text-lg text-slate-600">Destinations</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-5xl font-bold text-blue-600">4.9/5</span>
+            <span class="mt-2 text-lg text-slate-600">Average Rating</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-12 sm:py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">What Our Adventurers Say</h2>
+          <p class="mt-4 text-lg tracking-tight text-slate-700">Real stories from travelers who explored with us.</p>
+        </div>
+        <div class="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <!-- Review Card 1 -->
+          <div class="bg-white rounded-2xl shadow-lg p-8">
+            <div class="flex items-center mb-4">
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+            </div>
+            <p class="text-slate-700">"The Manali Leh trip was an experience of a lifetime. The organization was flawless and the views were breathtaking. Highly recommended!"</p>
+            <p class="mt-4 font-semibold text-slate-900">- Priya Sharma</p>
+          </div>
+          <!-- Review Card 2 -->
+          <div class="bg-white rounded-2xl shadow-lg p-8">
+            <div class="flex items-center mb-4">
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-slate-300" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+            </div>
+            <p class="text-slate-700">"Our weekend trek to Kalsubai was amazing. The guide was knowledgeable and friendly. A great escape from the city."</p>
+            <p class="mt-4 font-semibold text-slate-900">- Rohan Mehta</p>
+          </div>
+          <!-- Review Card 3 -->
+          <div class="bg-white rounded-2xl shadow-lg p-8">
+            <div class="flex items-center mb-4">
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+            </div>
+            <p class="text-slate-700">"Just returned from the Thailand tour and it was fantastic. Everything was well-planned, from the hotels to the sightseeing."</p>
+            <p class="mt-4 font-semibold text-slate-900">- Anjali Desai</p>
+          </div>
+        </div>
+
+        <div class="mt-16 text-center">
+          <a href="https://www.google.com/search?q=Mountains+Are+Calling" target="_blank" rel="noopener noreferrer" class="inline-block rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white hover:bg-blue-700">
+            See All Reviews
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <footer id="contact" class="bg-slate-900 text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold">Travel Adventures</h3>
+          <p class="mt-4 text-slate-400">Your journey begins here. Let us help you explore the world.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">Quick Links</h3>
+          <ul class="mt-4 space-y-2">
+            <li><a href="#destinations" class="hover:text-blue-400">Destinations</a></li>
+            <li><a href="#gallery" class="hover:text-blue-400">Gallery</a></li>
+            <li><a href="#blog" class="hover:text-blue-400">Blog</a></li>
+            <li><a href="#about" class="hover:text-blue-400">About Us</a></li>
+            <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">Follow Us</h3>
+          <div class="mt-4 flex gap-x-6">
+            <a href="#" aria-label="Twitter" class="hover:text-blue-400">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="hover:text-blue-400">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9h4v2h-4v-2zm-2 4h8v2h-8v-2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-16 border-t border-slate-700 pt-8 text-center text-slate-400 text-sm">
+        <p>&copy; <span x-text="new Date().getFullYear()"></span> Travel Adventures. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

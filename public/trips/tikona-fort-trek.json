@@ -1,0 +1,24 @@
+{
+  "id": "tikona-fort-trek",
+  "title": "Tikona Fort Trek",
+  "price": 4000,
+  "image": {
+    "src": "https://placehold.co/1920x600/facc15/ffffff?text=Tikona+Fort+Trek",
+    "alt": "Tikona Fort Trek"
+  },
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Trek and Exploration",
+      "description": "Start the trek to Tikona Fort, explore the fort, and enjoy panoramic views of the Pawna Dam."
+    }
+  ],
+  "inclusions": [
+    "Transportation from Lonavala",
+    "Guide",
+    "Snacks"
+  ],
+  "exclusions": [
+    "Personal expenses"
+  ]
+}

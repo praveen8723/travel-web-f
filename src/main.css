@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@tailwind utilities;
+
+@theme {
+  --color-primary: #3b82f6;
+  --font-sans: system-ui, -apple-system, sans-serif;
+  /* Add more custom theme values here */
+}

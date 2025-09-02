@@ -1,0 +1,37 @@
+{
+  "id": "manali-leh-trip",
+  "title": "Manali Leh Trip",
+  "price": 25000,
+  "image": {
+    "src": "https://placehold.co/1920x600/fb923c/ffffff?text=Manali+Leh+Trip",
+    "alt": "Manali Leh Trip"
+  },
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Arrival in Manali",
+      "description": "Arrive in Manali and check into your hotel. Spend the day exploring the local markets and cafes."
+    },
+    {
+      "day": 2,
+      "title": "Manali to Jispa",
+      "description": "Embark on a scenic drive to Jispa, crossing the Rohtang Pass."
+    },
+    {
+      "day": 3,
+      "title": "Jispa to Leh",
+      "description": "Continue your journey to Leh, the capital of Ladakh."
+    }
+  ],
+  "inclusions": [
+    "Accommodation",
+    "Meals (as per itinerary)",
+    "Transportation",
+    "Permits"
+  ],
+  "exclusions": [
+    "Flights to and from Manali",
+    "Personal expenses",
+    "Travel insurance"
+  ]
+}

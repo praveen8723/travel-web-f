@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>All Destinations - Travel Adventures</title>
+  <meta name="description" content="Explore all our destinations.">
+  
+  <link rel="stylesheet" href="/src/main.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="flex h-full flex-col bg-white antialiased">
+  
+  <header class="py-6">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="relative z-50 flex justify-between">
+        <div class="flex items-center md:gap-x-12">
+          <a href="/" aria-label="Home" class="flex items-center">
+            <img src="https://placehold.co/40x40/3b82f6/ffffff?text=M" alt="mountains are calling logo" class="h-10 w-10 rounded-full">
+            <span class="text-2xl font-bold text-slate-900 ml-3">mountains are calling</span>
+          </a>
+        </div>
+        <div class="hidden md:flex md:gap-x-6 items-center">
+          <a href="/" class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">Home</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="flex-auto">
+    
+    <section class="py-12 sm:py-16 bg-slate-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h1 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">All Destinations</h1>
+          <p class="mt-4 text-lg tracking-tight text-slate-700">Explore our hand-picked selection of unforgettable travel experiences.</p>
+        </div>
+        
+        <div class="mt-16 space-y-16">
+          <!-- Weekend Trips -->
+          <div>
+            <h3 class="text-2xl font-bold tracking-tight text-slate-900 animate-fade-in">Weekend Trips</h3>
+            <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/34d399/ffffff?text=Lonavala+Getaway" alt="Lonavala" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.7</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Lonavala Getaway</h4>
+                  <p class="mt-2 text-slate-600">A perfect escape to the hills of Lonavala.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹5,000 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/34d399/ffffff?text=Alibaug+Beach+Trip" alt="Alibaug" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.6</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Alibaug Beach Trip</h4>
+                  <p class="mt-2 text-slate-600">Relax and unwind by the serene beaches of Alibaug.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹6,000 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/34d399/ffffff?text=Matheran+Hill+Station" alt="Matheran" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.8</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Matheran Hill Station</h4>
+                  <p class="mt-2 text-slate-600">Explore the beauty of the smallest hill station in India.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹5,500 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weekend Treks -->
+          <div>
+            <h3 class="text-2xl font-bold tracking-tight text-slate-900 animate-fade-in">Weekend Treks</h3>
+            <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/60a5fa/ffffff?text=Kalsubai+Trek" alt="Kalsubai" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.9</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Kalsubai Trek</h4>
+                  <p class="mt-2 text-slate-600">Conquer the highest peak in Maharashtra.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹8,000 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/60a5fa/ffffff?text=Harishchandragad+Trek" alt="Harishchandragad" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.8</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Harishchandragad Trek</h4>
+                  <p class="mt-2 text-slate-600">Explore the ancient fort and the Konkan Kada.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹9,000 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/60a5fa/ffffff?text=Rajmachi+Trek" alt="Rajmachi" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.7</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Rajmachi Trek</h4>
+                  <p class="mt-2 text-slate-600">A scenic trek to the twin forts of Rajmachi.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹8,500 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sunrise Treks -->
+          <div>
+            <h3 class="text-2xl font-bold tracking-tight text-slate-900 animate-fade-in">Sunrise Treks</h3>
+            <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/facc15/ffffff?text=Tikona+Fort+Trek" alt="Tikona" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.8</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Tikona Fort Trek</h4>
+                  <p class="mt-2 text-slate-600">Witness a glorious sunrise from the top of Tikona Fort.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹4,000 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/facc15/ffffff?text=Lohagad+Fort+Trek" alt="Lohagad" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.7</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Lohagad Fort Trek</h4>
+                  <p class="mt-2 text-slate-600">A thrilling night trek to see the sunrise from Lohagad.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹4,500 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/facc15/ffffff?text=Visapur+Fort+Trek" alt="Visapur" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.6</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Visapur Fort Trek</h4>
+                  <p class="mt-2 text-slate-600">An easy trek to enjoy a panoramic sunrise view.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹4,200 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- North India Trips -->
+          <div>
+            <h3 class="text-2xl font-bold tracking-tight text-slate-900 animate-fade-in">North India Trips</h3>
+            <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/fb923c/ffffff?text=Manali+Leh+Trip" alt="Manali" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.5</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Manali Leh Trip</h4>
+                  <p class="mt-2 text-slate-600">A road trip through the stunning landscapes of the Himalayas.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹25,000 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/fb923c/ffffff?text=Spiti+Valley+Tour" alt="Spiti" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.8</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Spiti Valley Tour</h4>
+                  <p class="mt-2 text-slate-600">Explore the cold desert mountain valley of Spiti.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹30,000 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/fb923c/ffffff?text=Kashmir+Great+Lakes" alt="Kashmir" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.7</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Kashmir Great Lakes</h4>
+                  <p class="mt-2 text-slate-600">A trek to the pristine alpine lakes of Kashmir.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹28,000 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- International Trips -->
+          <div>
+            <h3 class="text-2xl font-bold tracking-tight text-slate-900 animate-fade-in">International Trips</h3>
+            <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/f87171/ffffff?text=Thailand+Tour" alt="Thailand" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.8</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Thailand Tour</h4>
+                  <p class="mt-2 text-slate-600">Explore the vibrant culture and beautiful beaches of Thailand.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹80,000 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/f87171/ffffff?text=Dubai+Vacation" alt="Dubai" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.9</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Dubai Vacation</h4>
+                  <p class="mt-2 text-slate-600">Experience the luxury and glamour of Dubai.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹1,20,000 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+              <!-- Trip Card -->
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fade-in">
+                <div class="relative">
+                  <img src="https://placehold.co/800x600/f87171/ffffff?text=Europe+Backpacking" alt="Europe" class="h-56 w-full object-cover">
+                  <div class="absolute top-0 right-0 bg-yellow-400 text-white py-1 px-3 rounded-bl-lg flex items-center">
+                    <svg class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.49 9.394c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg>
+                    <span>4.7</span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-lg font-semibold text-slate-900">Europe Backpacking</h4>
+                  <p class="mt-2 text-slate-600">A backpacking adventure across the iconic cities of Europe.</p>
+                  <p class="mt-4 font-semibold text-slate-900">₹2,50,000 per person</p>
+                  <a href="trip-details.html" class="mt-4 inline-block rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

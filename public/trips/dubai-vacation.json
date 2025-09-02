@@ -1,0 +1,35 @@
+{
+  "id": "dubai-vacation",
+  "title": "Dubai Vacation",
+  "price": 120000,
+  "image": {
+    "src": "https://placehold.co/1920x600/f87171/ffffff?text=Dubai+Vacation",
+    "alt": "Dubai Vacation"
+  },
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Arrival and Dhow Cruise",
+      "description": "Arrive in Dubai, check in, and enjoy a relaxing dinner cruise on a traditional dhow."
+    },
+    {
+      "day": 2,
+      "title": "City Tour and Burj Khalifa",
+      "description": "Explore the city's landmarks and enjoy panoramic views from the top of the Burj Khalifa."
+    },
+    {
+      "day": 3,
+      "title": "Desert Safari",
+      "description": "Experience a thrilling desert safari with dune bashing, camel rides, and a traditional Bedouin dinner."
+    }
+  ],
+  "inclusions": [
+    "5-star hotel accommodation",
+    "All tours and transfers",
+    "Visa assistance"
+  ],
+  "exclusions": [
+    "International flights",
+    "Personal expenses"
+  ]
+}

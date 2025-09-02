@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: praveen8723/travel-website-final
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "trips"
+    label: "Trips"
+    folder: "public/trips"
+    create: true
+    slug: "{{fields.id}}"
+    fields:
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Price", name: "price", widget: "number"}
+      - label: "Image", name: "image", widget: "object", fields:
+          - {label: "Source", name: "src", widget: "image"}
+          - {label: "Alt Text", name: "alt", widget: "string"}
+      - label: "Itinerary", name: "itinerary", widget: "list", fields:
+          - {label: "Day", name: "day", widget: "number"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+      - label: "Inclusions", name: "inclusions", widget: "list" 
+      - label: "Exclusions", name: "exclusions", widget: "list"
